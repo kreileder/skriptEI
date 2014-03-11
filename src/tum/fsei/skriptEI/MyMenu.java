@@ -13,15 +13,15 @@ public class MyMenu extends Activity {
 		setContentView(R.layout.activity_my_menu);
 		
 		TextView tv = (TextView) findViewById(R.id.textView1);
-		Skript skript 		= new Skript("id","title","price","ident","stock",false);
-		InternalStorage.vec.add(skript);
+		//Skript skript = new Skript(1,"title",0.5,"ident",50,false);
+		//InternalStorage.vec.add(skript);
 		
-		String tmpID = InternalStorage.vec.elementAt(0).getId();
-		String tmpPrice = InternalStorage.vec.elementAt(0).getPrice();
+		System.out.print("IS länge: |" + InternalStorage.vec.size() + "|\n");
+		
+		int tmpID = InternalStorage.vec.elementAt(1).getId();
+		double tmpPrice = InternalStorage.vec.elementAt(0).getPrice();
 		String tmpTitle = InternalStorage.vec.elementAt(0).getTitle();
-		
-		
-		tv.setText(tmpID + " " + tmpPrice + " " + tmpTitle);
+		tv.setText("Vector Size:" + InternalStorage.vec.size() + "Properties:" +tmpID + " " + tmpPrice + " " + tmpTitle);
 	}
 
 	@Override

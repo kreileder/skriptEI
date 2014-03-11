@@ -1,14 +1,16 @@
 package tum.fsei.skriptEI;
 
-
-
 public class Skript{
 
 	//private static final long serialVersionUID = 1L;
-	String id, title, price, ident, stock;
+	int id;
+	String title;
+	double price;
+	String ident;
+	int stock;
 	boolean selected;
 	
-	public Skript(String id, String title, String price, String ident, String stock, boolean selected){
+	public Skript(int id, String title, double price, String ident, int stock, boolean selected){
 		this.id = id;
 		this.title = title;
 		this.price = price;
@@ -17,7 +19,7 @@ public class Skript{
 		this.selected = selected;
 	}
 	
-	public String getId(){
+	public int getId(){
 		return this.id;
 	}
 	
@@ -25,7 +27,7 @@ public class Skript{
 		return this.title;
 	}
 	
-	public String getPrice(){
+	public double getPrice(){
 		return this.price;
 	}
 	
@@ -33,11 +35,11 @@ public class Skript{
 		return this.ident;
 	}
 	
-	public String getStock(){
+	public int getStock(){
 		return this.stock;
 	}
 	
-	public void setId(String id){
+	public void setId(int id){
 		this.id = id;
 	}
 	
@@ -45,7 +47,7 @@ public class Skript{
 		this.title = title;
 	}
 	
-	public void setPrice(String price){
+	public void setPrice(double price){
 		this.price = price;
 	}
 	
@@ -53,7 +55,7 @@ public class Skript{
 		this.ident = ident;
 	}
 	
-	public void setStock(String stock){
+	public void setStock(int stock){
 		this.stock = stock;
 	}
 
