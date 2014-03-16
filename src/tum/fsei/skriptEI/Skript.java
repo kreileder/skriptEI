@@ -18,9 +18,9 @@ public class Skript{
 		this.stock = stock;
 		this.selected = selected;
 	}
-	
+
 	public int getId(){
-		return this.id;
+		return id;
 	}
 	
 	public String getTitle(){

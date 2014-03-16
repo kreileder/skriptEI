@@ -8,13 +8,9 @@ class InternalStorage {
 
 	public static Vector<Skript> vec = new Vector<Skript>();
 
-	//Skript skript = new Skript(0,null,0,null,0,false);
-
 	public static void setSkript(Skript skript) {
-
 		// TODO Wertebereiche prüfen!
-		vec.add(skript);
-		
+		vec.addElement(skript);
 	}
 
 }

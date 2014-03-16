@@ -25,6 +25,7 @@ public class DBService extends IntentService {
 	// Für die Loadfunktion
 	private static final String TAG = DBService.class.getSimpleName();
 	private static final String FILENAME = TAG + ".txt";
+	private Vector<Skript> vec = new Vector<Skript>();
 
 	/**
 	 * A constructor is required, and must call the super IntentService(String)
@@ -158,7 +159,7 @@ public class DBService extends IntentService {
 	/************************
 	 *       FileParser     *
 	 ************************/
-	public String parse_list() {
+	public void parse_list() {
 
 		Skript mySkript = new Skript(0, null, 0, null, 0, false);
 		String[] singleSkriptArray;
@@ -179,6 +180,8 @@ public class DBService extends IntentService {
 
 		// go through all Scripts
 		for (String item : skriptArray) {
+			// Set default values for next script
+			mySkript.setId(-1); mySkript.setTitle(null); mySkript.setStock(0); mySkript.setPrice(0); mySkript.setIdent(null);
 			
 			// split all Scripts by their properties
 			singleSkriptArray = item.split("\\r?\\n");
@@ -203,19 +206,25 @@ public class DBService extends IntentService {
 			// print Script Properties
 			System.out.print("Id: |" + mySkript.getId() + "|\n");
 			System.out.print("Title: |" + mySkript.getTitle() + "|\n");
-			System.out.print("Stock: |" + mySkript.getStock() + "|\n");
 			System.out.print("Price: |" + mySkript.getPrice() + "|\n");
+			System.out.print("Stock: |" + mySkript.getStock() + "|\n");
 			System.out.print("Ident: |" + mySkript.getIdent() + "|\n");
 			
+			// Check ID
+			if(mySkript.getId() > -1)
 			// Save mySkript in Internal Storage
-			InternalStorage.setSkript(mySkript);
+			InternalStorage.setSkript(new Skript(	mySkript.getId(),
+													mySkript.getTitle(), 
+													mySkript.getPrice(), 
+													mySkript.getIdent(), 
+													mySkript.getStock(), 
+													false));
 			
-			// Set default values for next script
-			mySkript.setId(0); mySkript.setTitle(null); mySkript.setStock(0); mySkript.setPrice(0); mySkript.setIdent(null);
-
 		}
-		return "";
-
+		// Add Dummy Skript
+		//mySkript.setId(500); mySkript.setTitle("Der Titel"); mySkript.setStock(20); mySkript.setPrice(7.4); mySkript.setIdent("#EI456");
+		// Save mySkript in Internal Storage
+		//InternalStorage.setSkript(mySkript);
 	}
 
 	@Override
@@ -223,6 +232,7 @@ public class DBService extends IntentService {
 		super.onDestroy();
 
 		 Intent dialogIntent = new Intent(getBaseContext(), tum.fsei.skriptEI.MyMenu.class);
+		 //dialogIntent.putExtra("Storage", "bla");
 		 dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		 getApplication().startActivity(dialogIntent);
 

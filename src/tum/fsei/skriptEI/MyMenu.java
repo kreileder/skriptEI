@@ -14,14 +14,24 @@ public class MyMenu extends Activity {
 		
 		TextView tv = (TextView) findViewById(R.id.textView1);
 		//Skript skript = new Skript(1,"title",0.5,"ident",50,false);
-		//InternalStorage.vec.add(skript);
+		//InternalStorage.setSkript(skript);
 		
 		System.out.print("IS länge: |" + InternalStorage.vec.size() + "|\n");
 		
-		int tmpID = InternalStorage.vec.elementAt(1).getId();
-		double tmpPrice = InternalStorage.vec.elementAt(0).getPrice();
-		String tmpTitle = InternalStorage.vec.elementAt(0).getTitle();
-		tv.setText("Vector Size:" + InternalStorage.vec.size() + "Properties:" +tmpID + " " + tmpPrice + " " + tmpTitle);
+		//int tmpID = InternalStorage.vec.elementAt(2).getId();
+		//double tmpPrice = InternalStorage.vec.elementAt(2).getPrice();
+		//String tmpTitle = InternalStorage.vec.elementAt(2).getTitle();
+		String myText = "";
+		int i = 0;
+		
+		for(Skript skript : InternalStorage.vec){
+			myText += "Nr: " + i + "\n";
+			myText += "ID: " + skript.getId() + "\n";
+			myText += "Titel: " + skript.getTitle() + "\n";
+			myText += "Preis: " + skript.getPrice() + "\n";
+			i = i + 1;
+		}
+		tv.setText(myText);
 	}
 
 	@Override
