@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		/*
 		 * begin dialog
+		 * Very important
 		 */
 		ContextWrapper myCtxt = new ContextWrapper(this);
         AlertDialog.Builder startDialog = new AlertDialog.Builder(myCtxt);
