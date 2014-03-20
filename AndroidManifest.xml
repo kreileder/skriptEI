@@ -39,6 +39,10 @@
             android:name="tum.fsei.skriptEI.MyMenu"
             android:label="@string/title_activity_my_menu" >
         </activity>
+        <activity
+            android:name="tum.fsei.skriptEI.MyListView"
+            android:label="@string/title_activity_my_list_view" >
+        </activity>
     </application>
 
 </manifest>

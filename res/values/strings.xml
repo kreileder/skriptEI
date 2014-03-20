@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_my_menu">MyMenu</string>
+    <string name="title_activity_my_list_view">MyListView</string>
 
 </resources>

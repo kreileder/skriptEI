@@ -1,8 +1,12 @@
 package tum.fsei.skriptEI;
 
 import android.app.Activity;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MyMenu extends Activity {
@@ -12,11 +16,22 @@ public class MyMenu extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_menu);
 		
+		Button myButton = (Button) findViewById(R.id.button1);
+		myButton.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View v) {
+		    	Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.MyListView.class);
+		    	startActivity(intent);
+		    }
+		});
+		
+	
+		
 		TextView tv = (TextView) findViewById(R.id.textView1);
 		//Skript skript = new Skript(1,"title",0.5,"ident",50,false);
 		//InternalStorage.setSkript(skript);
 		
-		System.out.print("IS länge: |" + InternalStorage.vec.size() + "|\n");
+		System.out.print("IS lï¿½nge: |" + InternalStorage.vec.size() + "|\n");
 		
 		//int tmpID = InternalStorage.vec.elementAt(2).getId();
 		//double tmpPrice = InternalStorage.vec.elementAt(2).getPrice();
