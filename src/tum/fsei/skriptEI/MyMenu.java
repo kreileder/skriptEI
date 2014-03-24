@@ -19,7 +19,8 @@ public class MyMenu extends Activity {
 		Button myButton = (Button) findViewById(R.id.button1);
 		myButton.setOnClickListener(new View.OnClickListener() {
 		    @Override
-		    public void onClick(View v) {
+		    public void onClick(View v) 
+		    {		    	
 		    	Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.MyListView.class);
 		    	startActivity(intent);
 		    }
@@ -27,7 +28,7 @@ public class MyMenu extends Activity {
 		
 	
 		
-		TextView tv = (TextView) findViewById(R.id.textView1);
+		//TextView tv = (TextView) findViewById(R.id.textView1);
 		//Skript skript = new Skript(1,"title",0.5,"ident",50,false);
 		//InternalStorage.setSkript(skript);
 		
@@ -36,17 +37,17 @@ public class MyMenu extends Activity {
 		//int tmpID = InternalStorage.vec.elementAt(2).getId();
 		//double tmpPrice = InternalStorage.vec.elementAt(2).getPrice();
 		//String tmpTitle = InternalStorage.vec.elementAt(2).getTitle();
-		String myText = "";
-		int i = 0;
-		
-		for(Skript skript : InternalStorage.vec){
-			myText += "Nr: " + i + "\n";
-			myText += "ID: " + skript.getId() + "\n";
-			myText += "Titel: " + skript.getTitle() + "\n";
-			myText += "Preis: " + skript.getPrice() + "\n";
-			i = i + 1;
-		}
-		tv.setText(myText);
+//		String myText = "";
+//		int i = 0;
+//		
+//		for(Skript skript : InternalStorage.vec){
+//			myText += "Nr: " + i + "\n";
+//			myText += "ID: " + skript.getId() + "\n";
+//			myText += "Titel: " + skript.getTitle() + "\n";
+//			myText += "Preis: " + skript.getPrice() + "\n";
+//			i = i + 1;
+//		}
+//		tv.setText(myText);
 	}
 
 	@Override

@@ -21,12 +21,27 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int ic_action_search=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int pic1=0x7f020002;
+        public static final int pic10=0x7f020003;
+        public static final int pic11=0x7f020004;
+        public static final int pic2=0x7f020005;
+        public static final int pic3=0x7f020006;
+        public static final int pic4=0x7f020007;
+        public static final int pic5=0x7f020008;
+        public static final int pic6=0x7f020009;
+        public static final int pic7=0x7f02000a;
+        public static final int pic8=0x7f02000b;
+        public static final int pic9=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f080004;
+        public static final int Description=0x7f080006;
+        public static final int action_settings=0x7f080007;
         public static final int button1=0x7f080003;
         public static final int editText1=0x7f080001;
+        public static final int icon=0x7f080004;
+        public static final int subject=0x7f080005;
         public static final int textView1=0x7f080000;
         public static final int timePicker1=0x7f080002;
     }
@@ -35,6 +50,7 @@ public final class R {
         public static final int activity_menu=0x7f030001;
         public static final int activity_my_menu=0x7f030002;
         public static final int list_layout=0x7f030003;
+        public static final int lvrowlayout2=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;
