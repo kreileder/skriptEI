@@ -1,31 +1,18 @@
 package tum.fsei.skriptEI;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.URL;
-import java.util.Scanner;
-import java.util.Vector;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.util.Log;
 
 public class DBService extends IntentService {
 	public DBService() {
 		super("HelloIntentService");
 	}
-
-	private static final String LOG_TAG = "DBService";
-
-	// Für die Loadfunktion
-	private static final String TAG = DBService.class.getSimpleName();
-	private static final String FILENAME = TAG + ".txt";
-	private Vector<Skript> vec = new Vector<Skript>();
+	private String Liste = "";
+	private String seperator = "##";
 
 	/**
 	 * A constructor is required, and must call the super IntentService(String)
@@ -41,26 +28,26 @@ public class DBService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		System.out.println("Service gestartet");
-		InputStream is = null;
 
 		try {
 			URL url = new URL("http://www.fs.ei.tum.de/proxy/list_skripte_yaml");
-			is = url.openStream();
-			save(new Scanner(is).useDelimiter("\\Z").next());
-			// skripte = new Scanner( is ).useDelimiter( "\\Z" ).next();
-			// System.out.println(skripte);
-			parse_list();
+		    BufferedReader in = new BufferedReader(
+		                new InputStreamReader(
+		                url.openStream()));
+
+		    String inputLine;
+
+		    while ((inputLine = in.readLine()) != null)
+		    	// add inputLine to List
+		    	Liste += inputLine + seperator; 
+		        //System.out.println(Liste);
+
+		    in.close();
+		    
+			parse_list(Liste);
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			if (is != null)
-				try {
-					is.close();
-				} catch (IOException e) {
-			}
-		}
-
-		// Log.v(LOG_TAG, skriptL.load());
+		} 
 
 		// Normally we would do some work here, like download a file.
 		// For our sample, we just sleep for 5 seconds.
@@ -74,117 +61,54 @@ public class DBService extends IntentService {
 			}
 		}
 	}
-
+	
 	/************************
-	 *      FileWriter      *
+	 *      UTF 8 Decode    *
 	 ************************/
-	public void save(String s) {
-		FileOutputStream fos = null;
-		OutputStreamWriter osw = null;
-		try {
-			fos = openFileOutput(FILENAME, MODE_PRIVATE);
-			osw = new OutputStreamWriter(fos);
-			osw.write(s);
-		} catch (Throwable t) {
-			// FileNotFoundException, IOException
-			Log.e(TAG, "save()", t);
-		} finally {
-			if (osw != null) {
-				try {
-					osw.close();
-				} catch (IOException e) {
-					Log.e(TAG, "osw.close()", e);
-				}
-			}
-			if (fos != null) {
-				try {
-					fos.close();
-				} catch (IOException e) {
-					Log.e(TAG, "fos.close()", e);
-				}
-			}
-		}
-	}
-
-	/************************
-	 *      FileLoader      *
-	 ************************/
-	public String load() {
-		StringBuilder sb = new StringBuilder();
-		FileInputStream fis = null;
-		InputStreamReader isr = null;
-		BufferedReader br = null;
-		try {
-			fis = openFileInput(FILENAME);
-			isr = new InputStreamReader(fis);
-			br = new BufferedReader(isr);
-			String s;
-			// Datei zeilenweise lesen
-			while ((s = br.readLine()) != null) {
-				// ggf. Zeilenumbruch hinzufï¿½gen
-				if (sb.length() > 0) {
-					sb.append('\n');
-				}
-				sb.append(s);
-			}
-		} catch (Throwable t) {
-			// FileNotFoundException, IOException
-			Log.e(TAG, "load()", t);
-		} finally {
-			if (br != null) {
-				try {
-					br.close();
-				} catch (IOException e) {
-					Log.e(TAG, "br.close()", e);
-				}
-			}
-			if (isr != null) {
-				try {
-					isr.close();
-				} catch (IOException e) {
-					Log.e(TAG, "isr.close()", e);
-				}
-			}
-			if (fis != null) {
-				try {
-					fis.close();
-				} catch (IOException e) {
-					Log.e(TAG, "fis.close()", e);
-				}
-			}
-		}
-		return sb.toString();
+	
+	private String replaceChar(String Liste)
+	{
+		Liste = Liste.replace("\\xC3\\xA4", "ä");
+		Liste = Liste.replace("\\xC3\\x84", "Ä");
+		Liste = Liste.replace("\\xC3\\xB6", "ö");
+		Liste = Liste.replace("\\xC3\\x96", "Ö");
+		Liste = Liste.replace("\\xC3\\xBC", "ü");
+		Liste = Liste.replace("\\xC3\\x9C", "Ü");
+		Liste = Liste.replace("\\xC3\\x9F", "ß");
+		Liste = Liste.replace("\"", "");
+		
+		return Liste;
 	}
 
 	/************************
 	 *       FileParser     *
 	 ************************/
-	public void parse_list() {
+	public void parse_list(String Liste) {
 
 		Skript mySkript = new Skript(0, null, 0, null, 0, false);
 		String[] singleSkriptArray;
-		String list = "";
 		String[] skriptArray;
-
-		// Save the whole list in the variable list
-		list = load();
 		
 		// Remove the first characters of the string
-		list = list.substring(7);
+		Liste = Liste.substring(7);
+		
+		// Replace wrong decoded Chars
+		Liste = replaceChar(Liste);
 		
 		// print list
-		//System.out.print("Liste: |" + list + "|\n");
+		//System.out.print("Liste: |" + Liste + "|\n");
 		
 		// split the list in several scripts
-		skriptArray = list.split("- ");
-
+		skriptArray = Liste.split(seperator +"-");
+		//System.out.print("Lenght: |" + skriptArray.length + "|\n");
+		
 		// go through all Scripts
 		for (String item : skriptArray) {
 			// Set default values for next script
 			mySkript.setId(-1); mySkript.setTitle(null); mySkript.setStock(0); mySkript.setPrice(0); mySkript.setIdent(null);
 			
 			// split all Scripts by their properties
-			singleSkriptArray = item.split("\\r?\\n");
+			singleSkriptArray = item.split(seperator);
 			for(String property : singleSkriptArray){
 				if(property.indexOf("id:") > -1){ 				// ID
 					mySkript.setId(Integer.parseInt(property.substring(property.indexOf("id:")+4)));	
@@ -221,10 +145,6 @@ public class DBService extends IntentService {
 													false));
 			
 		}
-		// Add Dummy Skript
-		//mySkript.setId(500); mySkript.setTitle("Der Titel"); mySkript.setStock(20); mySkript.setPrice(7.4); mySkript.setIdent("#EI456");
-		// Save mySkript in Internal Storage
-		//InternalStorage.setSkript(mySkript);
 	}
 
 	@Override
@@ -235,6 +155,8 @@ public class DBService extends IntentService {
 		 //dialogIntent.putExtra("Storage", "bla");
 		 dialogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		 getApplication().startActivity(dialogIntent);
+		 
+		 
 
 	}
 }

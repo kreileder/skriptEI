@@ -32,7 +32,7 @@ public class MyMenu extends Activity {
 		//Skript skript = new Skript(1,"title",0.5,"ident",50,false);
 		//InternalStorage.setSkript(skript);
 		
-		System.out.print("IS l�nge: |" + InternalStorage.vec.size() + "|\n");
+		//System.out.print("IS l�nge: |" + InternalStorage.vec.size() + "|\n");
 		
 		//int tmpID = InternalStorage.vec.elementAt(2).getId();
 		//double tmpPrice = InternalStorage.vec.elementAt(2).getPrice();
