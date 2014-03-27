@@ -1,18 +1,20 @@
 package tum.fsei.skriptEI;
 
 
-import tum.fsei.skriptEI.R;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-
+	
+	public final String PREFS_NAME = "SkriptStorage";
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,8 +41,8 @@ public class MainActivity extends Activity {
                     Toast.makeText(getBaseContext(),
                             "Den Service starten!", Toast.LENGTH_SHORT).show();
                     
-//                    Intent intent1 = new Intent(getBaseContext(), tum.fsei.skriptEI.MyMenu.class);
-//        	        startActivity(intent1);
+                    //Intent intent1 = new Intent(getBaseContext(), tum.fsei.skriptEI.MyMenu.class);
+                    //startActivity(intent1);
                     
                     
                 }
@@ -54,8 +56,11 @@ public class MainActivity extends Activity {
                     Toast.makeText(getBaseContext(),
                             "Letzten Stand aus dem Handyspeicher entnehmen!!!", Toast.LENGTH_LONG).show();
                     
-//                    Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.MyMenu.class);
-//                    startActivity(intent);
+                    SharedPreferences storage = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+                    restore.load(storage);
+            		
+                    Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.MyMenu.class);
+                    startActivity(intent);
 
                 }
             });
@@ -72,5 +77,16 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	 @Override
+	 protected void onDestroy(){
+		 super.onDestroy();
+		 SharedPreferences storage = getSharedPreferences(PREFS_NAME, 0);
+		 
+	     restore.save(storage);
+	      
+	 }
+	
+	
 
 }

@@ -128,11 +128,11 @@ public class DBService extends IntentService {
 			}
 			
 			// print Script Properties
-			System.out.print("Id: |" + mySkript.getId() + "|\n");
-			System.out.print("Title: |" + mySkript.getTitle() + "|\n");
-			System.out.print("Price: |" + mySkript.getPrice() + "|\n");
-			System.out.print("Stock: |" + mySkript.getStock() + "|\n");
-			System.out.print("Ident: |" + mySkript.getIdent() + "|\n");
+//			System.out.print("Id: |" + mySkript.getId() + "|\n");
+//			System.out.print("Title: |" + mySkript.getTitle() + "|\n");
+//			System.out.print("Price: |" + mySkript.getPrice() + "|\n");
+//			System.out.print("Stock: |" + mySkript.getStock() + "|\n");
+//			System.out.print("Ident: |" + mySkript.getIdent() + "|\n");
 			
 			// Check ID
 			if(mySkript.getId() > -1)
