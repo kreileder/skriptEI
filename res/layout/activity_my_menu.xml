@@ -27,21 +27,23 @@
         <requestFocus />
     </EditText>
 
-    <TimePicker
-        android:id="@+id/timePicker1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/timePicker1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="52dp"
-        android:layout_marginLeft="17dp"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignRight="@+id/editText1"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="14dp"
         android:text="Show myListView" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="44dp"
+        android:text="Alternatives App-Layout" />
 
 </RelativeLayout>

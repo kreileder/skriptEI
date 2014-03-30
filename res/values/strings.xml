@@ -7,5 +7,6 @@
     <string name="title_activity_menu">Menu</string>
     <string name="title_activity_my_menu">MyMenu</string>
     <string name="title_activity_my_list_view">MyListView</string>
+    <string name="title_activity_my_menu1">MyMenu1</string>
 
 </resources>
