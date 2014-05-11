@@ -37,20 +37,23 @@ public final class R {
         public static final int standort=0x7f02000d;
     }
     public static final class id {
+        public static final int ContactMail=0x7f08000b;
         public static final int Date=0x7f080000;
-        public static final int Description=0x7f08000e;
-        public static final int Map=0x7f080008;
-        public static final int Name=0x7f080009;
+        public static final int Description=0x7f080011;
+        public static final int Map=0x7f08000a;
+        public static final int MapTitle=0x7f080009;
+        public static final int Name=0x7f08000c;
+        public static final int NewsContent=0x7f080008;
         public static final int NewsHead=0x7f080007;
         public static final int Oeffnung=0x7f080006;
-        public static final int Price=0x7f08000a;
-        public static final int action_settings=0x7f08000f;
+        public static final int Price=0x7f08000d;
+        public static final int action_settings=0x7f080012;
         public static final int button1=0x7f080002;
         public static final int button2=0x7f080003;
-        public static final int checkBox=0x7f08000b;
+        public static final int checkBox=0x7f08000e;
         public static final int editText1=0x7f080001;
-        public static final int icon=0x7f08000c;
-        public static final int subject=0x7f08000d;
+        public static final int icon=0x7f08000f;
+        public static final int subject=0x7f080010;
         public static final int tvFragFirst=0x7f080005;
         public static final int viewPager=0x7f080004;
     }
