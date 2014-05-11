@@ -31,7 +31,7 @@ public class MyMenu extends Activity {
 		    @Override
 		    public void onClick(View v) 
 		    {		    	
-		    	Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.MyMenu1.class);
+		    	Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.PagingActivity.class);
 		    	startActivity(intent);
 		    }
 		});

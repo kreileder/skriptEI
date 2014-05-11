@@ -8,5 +8,7 @@
     <string name="title_activity_my_menu">MyMenu</string>
     <string name="title_activity_my_list_view">MyListView</string>
     <string name="title_activity_my_menu1">MyMenu1</string>
+    <string name="title_fragment_standard_list">Semesterpacks</string>
+    
 
 </resources>

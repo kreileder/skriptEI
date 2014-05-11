@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         AlertDialog.Builder startDialog = new AlertDialog.Builder(myCtxt);
         //TODO Strings in res/values/strings auslagern
         startDialog.setMessage("Verbinden zum Fachschaftsserver um den aktuellen Skriptenbestand zu erhalten ?");
-        startDialog.setPositiveButton("Ja", new
+        startDialog.setPositiveButton("Ja verdammt nochmal!", new
                 DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog,
                 int whichButton)
