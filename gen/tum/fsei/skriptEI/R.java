@@ -41,7 +41,7 @@ public final class R {
         public static final int Description=0x7f08000e;
         public static final int Map=0x7f080008;
         public static final int Name=0x7f080009;
-        public static final int News=0x7f080007;
+        public static final int NewsHead=0x7f080007;
         public static final int Oeffnung=0x7f080006;
         public static final int Price=0x7f08000a;
         public static final int action_settings=0x7f08000f;
