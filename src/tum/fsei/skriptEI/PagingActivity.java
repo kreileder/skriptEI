@@ -31,6 +31,7 @@ public class PagingActivity extends FragmentActivity {
 	            case 1: return PageOneFragment.newInstance("SecondFragment, Instance 1");
 	            case 2: return PageOneFragment.newInstance("ThirdFragment, Instance 1");
 	            case 3: return new StandardListFragment();
+	            case 4: return new SkriptListFragment();
 //	            case 3: return ThirdFragment.newInstance("ThirdFragment, Instance 2");
 //	            case 4: return ThirdFragment.newInstance("ThirdFragment, Instance 3");
 	            default: return PageOneFragment.newInstance("ThirdFragment, Default");
@@ -39,7 +40,7 @@ public class PagingActivity extends FragmentActivity {
 
 	        @Override
 	        public int getCount() {
-	            return 4;
+	            return 5;
 	        }       
 	    }
 }
