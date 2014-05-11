@@ -34,6 +34,7 @@ public final class R {
         public static final int pic7=0x7f02000a;
         public static final int pic8=0x7f02000b;
         public static final int pic9=0x7f02000c;
+        public static final int standort=0x7f02000d;
     }
     public static final class id {
         public static final int Date=0x7f080000;
