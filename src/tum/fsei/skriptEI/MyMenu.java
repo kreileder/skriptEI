@@ -36,6 +36,16 @@ public class MyMenu extends Activity {
 		    }
 		});
 		
+		Button rssButton = (Button) findViewById(R.id.RSSButton);
+		rssButton.setOnClickListener(new View.OnClickListener() {
+		    @Override
+		    public void onClick(View v) 
+		    {		    	
+		    	Intent intent = new Intent(getBaseContext(), tum.fsei.skriptEI.RSSActivity.class);
+		    	startActivity(intent);
+		    }
+		});
+		
 		//TextView tv = (TextView) findViewById(R.id.textView1);
 		//Skript skript = new Skript(1,"title",0.5,"ident",50,false);
 		//InternalStorage.setSkript(skript);

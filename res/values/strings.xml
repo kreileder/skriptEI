@@ -10,5 +10,10 @@
     <string name="title_activity_my_menu1">MyMenu1</string>
     <string name="title_fragment_standard_list">Semesterpacks</string>
     <string name="title_fragment_all_list">Alle Skripte</string>
+    <string name="title">title</string>
+    <string name="link">link</string>
+    <string name="description">Description</string>
+    <string name="fetch">Fetch Feed</string>
+    <string name="title_activity_rss">RSSActivity</string>
 
 </resources>

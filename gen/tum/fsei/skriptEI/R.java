@@ -37,21 +37,28 @@ public final class R {
     }
     public static final class id {
         public static final int Date=0x7f080000;
-        public static final int Description=0x7f08000e;
-        public static final int Map=0x7f080008;
-        public static final int Name=0x7f080009;
-        public static final int News=0x7f080007;
-        public static final int Oeffnung=0x7f080006;
-        public static final int Price=0x7f08000a;
-        public static final int action_settings=0x7f08000f;
+        public static final int Description=0x7f080015;
+        public static final int Map=0x7f08000f;
+        public static final int Name=0x7f080010;
+        public static final int News=0x7f08000e;
+        public static final int Oeffnung=0x7f08000d;
+        public static final int Price=0x7f080011;
+        public static final int RSSButton=0x7f080004;
+        public static final int action_settings=0x7f080016;
         public static final int button1=0x7f080002;
         public static final int button2=0x7f080003;
-        public static final int checkBox=0x7f08000b;
+        public static final int checkBox=0x7f080012;
         public static final int editText1=0x7f080001;
-        public static final int icon=0x7f08000c;
-        public static final int subject=0x7f08000d;
-        public static final int tvFragFirst=0x7f080005;
-        public static final int viewPager=0x7f080004;
+        public static final int editText2=0x7f080009;
+        public static final int editText3=0x7f08000a;
+        public static final int icon=0x7f080013;
+        public static final int subject=0x7f080014;
+        public static final int textView1=0x7f080006;
+        public static final int textView2=0x7f080007;
+        public static final int textView3=0x7f080008;
+        public static final int textView4=0x7f08000b;
+        public static final int tvFragFirst=0x7f08000c;
+        public static final int viewPager=0x7f080005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -59,15 +66,17 @@ public final class R {
         public static final int activity_my_menu=0x7f030002;
         public static final int activity_my_menu1=0x7f030003;
         public static final int activity_paging=0x7f030004;
-        public static final int fragment_layout=0x7f030005;
-        public static final int fragment_page_one=0x7f030006;
-        public static final int fragment_page_three=0x7f030007;
-        public static final int fragment_page_two=0x7f030008;
-        public static final int list_layout=0x7f030009;
-        public static final int lvrowlayout2=0x7f03000a;
-        public static final int page1=0x7f03000b;
-        public static final int page2=0x7f03000c;
-        public static final int page3=0x7f03000d;
+        public static final int activity_rss=0x7f030005;
+        public static final int activity_rss_reader=0x7f030006;
+        public static final int fragment_layout=0x7f030007;
+        public static final int fragment_page_one=0x7f030008;
+        public static final int fragment_page_three=0x7f030009;
+        public static final int fragment_page_two=0x7f03000a;
+        public static final int list_layout=0x7f03000b;
+        public static final int lvrowlayout2=0x7f03000c;
+        public static final int page1=0x7f03000d;
+        public static final int page2=0x7f03000e;
+        public static final int page3=0x7f03000f;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -75,15 +84,21 @@ public final class R {
         public static final int my_list_view=0x7f070002;
         public static final int my_menu=0x7f070003;
         public static final int my_menu1=0x7f070004;
+        public static final int rs=0x7f070005;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int description=0x7f05000b;
+        public static final int fetch=0x7f05000c;
         public static final int hello_world=0x7f050002;
+        public static final int link=0x7f05000a;
+        public static final int title=0x7f050009;
         public static final int title_activity_menu=0x7f050003;
         public static final int title_activity_my_list_view=0x7f050005;
         public static final int title_activity_my_menu=0x7f050004;
         public static final int title_activity_my_menu1=0x7f050006;
+        public static final int title_activity_rss=0x7f05000d;
         public static final int title_fragment_all_list=0x7f050008;
         public static final int title_fragment_standard_list=0x7f050007;
     }
