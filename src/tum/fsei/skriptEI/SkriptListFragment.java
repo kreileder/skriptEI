@@ -1,15 +1,12 @@
 package tum.fsei.skriptEI;
 
-import java.util.ArrayList;
-
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.ListView;
 import android.widget.TextView;
 
 public class SkriptListFragment extends ListFragment {
@@ -46,12 +43,29 @@ public class SkriptListFragment extends ListFragment {
             TextView titleTextView =
                 (TextView)convertView.findViewById(R.id.Name);
             titleTextView.setText(s.getTitle());
+            
             TextView priceTextView =
                 (TextView)convertView.findViewById(R.id.Price);
             double price = s.getPrice();
-            String priceString = "Kostet: " + price;
-            
+            String priceString = "Kostet: " + price + " € ";
             priceTextView.setText(priceString);
+            
+            TextView stockTextView =
+                    (TextView)convertView.findViewById(R.id.Stock);
+            int stock = s.getStock();
+            if (stock <= 0){
+            	stock = 0;
+            	stockTextView.setTextColor(Color.RED);
+            }
+            else if (stock < 6){
+            	stockTextView.setTextColor(Color.rgb(254, 184, 0));
+            }
+            else{
+            	stockTextView.setTextColor(Color.BLACK);
+            }
+            String stockString = "Verfügbar: " + stock + " Stück";
+            stockTextView.setText(stockString);
+            
             CheckBox solvedCheckBox =
                 (CheckBox)convertView.findViewById(R.id.checkBox);
             solvedCheckBox.setChecked(s.getSelected());

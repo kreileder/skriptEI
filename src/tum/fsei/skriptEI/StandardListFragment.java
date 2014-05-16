@@ -54,6 +54,8 @@ public class StandardListFragment extends ListFragment {
 	        for(int i = 0; i < skriptsToCheck.scripts.length; i++)
 	        {
 	        	String subjectToToggle = skriptsToCheck.scripts[i];
+	        	Log.d("Skript:", subjectToToggle);
+	        	//Log.d("IS:", InternalStorage.vec.elementAt(1).getIdent());
 	        	//
 	        	//	Den IntenalStorage nach dem subjectToToggle
 	        	//	durchsuchen.
@@ -61,15 +63,15 @@ public class StandardListFragment extends ListFragment {
 	        	for(int j = 0; j < InternalStorage.vec.size(); j++)
 	        	{
 	        		// Falls die Identifier übereinstimmen den Zustand wechseln
-	        		if( subjectToToggle.equals(InternalStorage.vec.elementAt(j).ident) )
+	        		if( subjectToToggle.equals(InternalStorage.vec.elementAt(j).getIdent()) )
 	        		{
-	        			if(InternalStorage.vec.elementAt(j).selected == false)
+	        			if(InternalStorage.vec.elementAt(j).getSelected() == false)
 	        			{
-	        				InternalStorage.vec.elementAt(j).selected = true;
+	        				InternalStorage.vec.elementAt(j).setSelected(true);
 	        			}
 	        			else
 	        			{
-	        				InternalStorage.vec.elementAt(j).selected = false;
+	        				InternalStorage.vec.elementAt(j).setSelected(false);
 	        			}
 	        			
 	        		}

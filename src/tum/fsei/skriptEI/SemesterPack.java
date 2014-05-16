@@ -24,6 +24,7 @@ public class SemesterPack {
 											"EI1234", 
 											"EI1234", 
 											"EI1234"};
+			break;
 		case 2:
 			this.name = "2.Semester";
 			this.content = new String[] {	"Schaltungstechnik 2",
@@ -38,6 +39,7 @@ public class SemesterPack {
 											"EI08260", 
 											"EI08116",
 											"EI06650"};
+			break;
 		case 3:
 			this.name = "3.Semester";
 			this.content = new String[] {	"Dummy 1", 
@@ -50,6 +52,7 @@ public class SemesterPack {
 											"EI1234", 
 											"EI1234", 
 											"EI1234"};
+			break;
 		case 4:
 			this.name = "4.Semester";
 			this.content = new String[] {	"Regelungssysteme 1", 
@@ -62,6 +65,7 @@ public class SemesterPack {
 											"EI1234", 
 											"EI1234", 
 											"EI1234"};
+			break;
 		}
 	}
 }
