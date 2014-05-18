@@ -3,6 +3,8 @@ package tum.fsei.skriptEI;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -19,6 +21,23 @@ public class SkriptListFragment extends ListFragment {
         SkriptAdapter adapter = new SkriptAdapter();
         setListAdapter(adapter);
     }
+	
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        
+		SkriptAdapter adapter = new SkriptAdapter();
+        setListAdapter(adapter);
+ 
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+	
+	public void onResume()
+	{
+		super.onResume();
+		Log.d("Resume", "Resume was called");
+//		SkriptAdapter adapter = new SkriptAdapter();
+//        setListAdapter(adapter);
+		
+	}
 	
 	/*
 	 * Adapter fÃ¼r ListView
@@ -47,7 +66,7 @@ public class SkriptListFragment extends ListFragment {
             TextView priceTextView =
                 (TextView)convertView.findViewById(R.id.Price);
             double price = s.getPrice();
-            String priceString = "Kostet: " + price + " € ";
+            String priceString = "Kostet: " + price + " ï¿½ ";
             priceTextView.setText(priceString);
             
             TextView stockTextView =
@@ -63,7 +82,7 @@ public class SkriptListFragment extends ListFragment {
             else{
             	stockTextView.setTextColor(Color.BLACK);
             }
-            String stockString = "Verfügbar: " + stock + " Stück";
+            String stockString = "Verfï¿½gbar: " + stock + " Stï¿½ck";
             stockTextView.setText(stockString);
             
             CheckBox solvedCheckBox =
@@ -90,6 +109,12 @@ public class SkriptListFragment extends ListFragment {
 			// TODO Auto-generated method stub
 			return 0;
 		}
+		
+		public int getItemPosition(Object object)
+		{
+			return -2;
+		}
+		
     }
 	
 //	@Override

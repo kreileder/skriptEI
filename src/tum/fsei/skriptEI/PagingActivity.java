@@ -6,18 +6,21 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 public class PagingActivity extends FragmentActivity {
-	 @Override
+	public ViewPager pager; 
+	
+	@Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.activity_paging);     
 
-	        ViewPager pager = (ViewPager) findViewById(R.id.viewPager);
-	        pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+	        this.pager = (ViewPager) findViewById(R.id.viewPager);
+	        this.pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 	    }
 
-	    private class MyPagerAdapter extends FragmentPagerAdapter {
+	    private class MyPagerAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener  {
 
 	        public MyPagerAdapter(FragmentManager fm) {
 	            super(fm);
@@ -41,6 +44,29 @@ public class PagingActivity extends FragmentActivity {
 	        @Override
 	        public int getCount() {
 	            return 5;
-	        }       
+	        }  
+	        
+	        @Override
+	        public void onPageSelected(int i) {
+	            Log.d("Seite", "Seite: " + i);
+	        }
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public int getItemPosition(Object object)
+			{
+				return -2;
+			}
+	        
 	    }
 }

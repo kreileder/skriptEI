@@ -1,10 +1,12 @@
 package tum.fsei.skriptEI;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class StandardListFragment extends ListFragment {
@@ -55,6 +57,12 @@ public class StandardListFragment extends ListFragment {
 	        {
 	        	String subjectToToggle = skriptsToCheck.scripts[i];
 	        	Log.d("Skript:", subjectToToggle);
+	        	Log.d("Skript:", "Erwartete Anzahl" + skriptsToCheck.scripts.length);
+	        	
+	        	// Count number of hits
+	        	int hitCounter = 0;
+	        	
+	        	
 	        	//Log.d("IS:", InternalStorage.vec.elementAt(1).getIdent());
 	        	//
 	        	//	Den IntenalStorage nach dem subjectToToggle
@@ -62,9 +70,19 @@ public class StandardListFragment extends ListFragment {
 	        	//
 	        	for(int j = 0; j < InternalStorage.vec.size(); j++)
 	        	{
+	        		//
+	        		//	Just for debugging
+	        		//
+	        		String currentSubject = InternalStorage.vec.elementAt(j).getIdent();
+	        		Log.d("Aktuelles Skript:", currentSubject);
+	        		
+	        		
+	        		
 	        		// Falls die Identifier übereinstimmen den Zustand wechseln
 	        		if( subjectToToggle.equals(InternalStorage.vec.elementAt(j).getIdent()) )
 	        		{
+	        			hitCounter = hitCounter + 1;
+	        			Log.d("Skript:", "Trefferanzahl " + hitCounter);
 	        			if(InternalStorage.vec.elementAt(j).getSelected() == false)
 	        			{
 	        				InternalStorage.vec.elementAt(j).setSelected(true);
@@ -77,5 +95,10 @@ public class StandardListFragment extends ListFragment {
 	        		}
 	        	}
 	        }
+	        ViewPager pager;
+	        pager = (ViewPager) getActivity().findViewById(R.id.viewPager);
+	        pager.getAdapter().notifyDataSetChanged();
+	        Toast.makeText(getActivity(), "Data change", Toast.LENGTH_SHORT).show();
 	    }
+	 
 }
