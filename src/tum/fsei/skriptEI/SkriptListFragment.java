@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SkriptListFragment extends ListFragment {
 
@@ -38,6 +40,7 @@ public class SkriptListFragment extends ListFragment {
 //        setListAdapter(adapter);
 		
 	}
+	
 	
 	/*
 	 * Adapter für ListView
@@ -114,6 +117,8 @@ public class SkriptListFragment extends ListFragment {
 		{
 			return -2;
 		}
+		
+		
 		
     }
 	

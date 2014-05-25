@@ -28,7 +28,7 @@
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonReorder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/editText1"
@@ -41,8 +41,8 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/buttonReorder"
+        android:layout_below="@+id/buttonReorder"
         android:layout_marginTop="44dp"
         android:text="Alternatives App-Layout" />
     
@@ -50,7 +50,7 @@
         android:id="@+id/RSSButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_alignLeft="@+id/buttonReorder"
         android:layout_below="@+id/button2"
         android:layout_marginTop="44dp"
         android:text="RSS_Beispiel" />
