@@ -9,12 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.ListView;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class SkriptListFragment extends ListFragment {
 
+	private CheckBox box;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,8 @@ public class SkriptListFragment extends ListFragment {
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
+        	final int pos = position;
+        	
             // If we weren't given a view, inflate one
             if (convertView == null) {
                 convertView = getActivity().getLayoutInflater()
@@ -88,9 +93,39 @@ public class SkriptListFragment extends ListFragment {
             String stockString = "Verf�gbar: " + stock + " St�ck";
             stockTextView.setText(stockString);
             
-            CheckBox solvedCheckBox =
-                (CheckBox)convertView.findViewById(R.id.checkBox);
-            solvedCheckBox.setChecked(s.getSelected());
+//            CheckBox solvedCheckBox =
+//                (CheckBox)convertView.findViewById(R.id.checkBox);
+//            solvedCheckBox.setChecked(s.getSelected());
+            box = (CheckBox) convertView.findViewById(R.id.checkBox);
+            box.setChecked(s.getSelected());
+            box.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                	//
+                	//	isChecked mirrors the state of the box, after the change happens
+                	//
+                	
+                	if(isChecked == true)
+                	{
+                		//
+                		//	Is currently checked, therefore should be unchecked now
+                		//
+                		Toast.makeText(getActivity(), "Select this" + pos, Toast.LENGTH_SHORT).show();
+                		
+                		InternalStorage.vec.elementAt(pos).setSelected(true);
+                		
+                		
+                	}
+                	else
+                	{
+                		Toast.makeText(getActivity(), "Unselect this", Toast.LENGTH_SHORT).show();
+                		InternalStorage.vec.elementAt(pos).setSelected(false);
+                	}
+                	
+
+                }
+            });
 
             return convertView;
         }
