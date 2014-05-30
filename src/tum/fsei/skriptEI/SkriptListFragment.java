@@ -73,7 +73,7 @@ public class SkriptListFragment extends ListFragment {
             
             TextView priceTextView =
                 (TextView)convertView.findViewById(R.id.Price);
-            double price = s.getPrice();
+            float price = s.getPrice();
             String priceString = "Kostet: " + price + " � ";
             priceTextView.setText(priceString);
             

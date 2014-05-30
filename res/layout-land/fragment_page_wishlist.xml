@@ -9,9 +9,8 @@
         android:id="@+id/textViewAuswahl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ausgewählte Skripte:"
         android:layout_margin="5dp"
-        android:layout_weight="0.10"
+        android:text="Ausgewählte Skripte:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <View
@@ -23,9 +22,9 @@
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="313dp"
+        android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        android:layout_weight="0.60" >
+        android:layout_weight="0.4" >
 
         <TextView
             android:id="@+id/textViewSelection"
@@ -59,7 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
-            android:layout_weight="0.1"
             android:src="@drawable/danger" />
 
         <TextView
@@ -68,7 +66,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:layout_marginTop="2dp"
-            android:layout_weight="0.1"
             android:text="Achtung:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -78,7 +75,6 @@
         android:id="@+id/buttonReorder"
         android:layout_width="221dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0.05"
         android:text="Nachbestellung" />
 
 </LinearLayout>
