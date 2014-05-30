@@ -5,12 +5,12 @@ public class Skript{
 	//private static final long serialVersionUID = 1L;
 	int id;
 	String title;
-	double price;
+	float price;
 	String ident;
 	int stock;
 	boolean selected;
 	
-	public Skript(int id, String title, double price, String ident, int stock, boolean selected){
+	public Skript(int id, String title, float price, String ident, int stock, boolean selected){
 		this.id = id;
 		this.title = title;
 		this.price = price;
@@ -27,7 +27,7 @@ public class Skript{
 		return this.title;
 	}
 	
-	public double getPrice(){
+	public float getPrice(){
 		return this.price;
 	}
 	
@@ -47,7 +47,7 @@ public class Skript{
 		this.title = title;
 	}
 	
-	public void setPrice(double price){
+	public void setPrice(float price){
 		this.price = price;
 	}
 	

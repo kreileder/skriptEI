@@ -120,7 +120,7 @@ public class DBService extends IntentService {
 					mySkript.setStock(Integer.parseInt(property.substring(property.indexOf("stock:")+7)));
 				}
 				else if (property.indexOf("price:") > -1){		// PRICE
-					mySkript.setPrice(Double.parseDouble(property.substring(property.indexOf("price:")+7)));
+					mySkript.setPrice(Float.parseFloat(property.substring(property.indexOf("price:")+7)));
 				}
 				else if (property.indexOf("identifier:") > -1){	//IDENTIFIER
 					mySkript.setIdent(property.substring(property.indexOf("identifier:")+12));

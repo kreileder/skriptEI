@@ -9,8 +9,15 @@
         android:id="@+id/textViewAuswahl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ausgewählte Skripte"
+        android:text="Ausgewählte Skripte:"
+        android:layout_margin="5dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_margin="2dp"
+        android:background="#000000" />
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -18,8 +25,8 @@
         android:layout_height="wrap_content" >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:orientation="vertical" >
 
             <TextView

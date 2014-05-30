@@ -31,7 +31,7 @@ public class restore {
 				 mySkript.setId(storage.getInt(i+"-ID", 0));
 				 mySkript.setTitle(storage.getString(i+"-Title", null));
 				 mySkript.setStock(storage.getInt(i+"-Stock", 0));
-				 mySkript.setPrice((double) storage.getFloat(i+"-Price",0));
+				 mySkript.setPrice(storage.getFloat(i+"-Price",0));
 				 mySkript.setIdent(storage.getString(i+"-Ident", null));
 				 mySkript.setSelected(storage.getBoolean(i+"-Selected", false));
 				 
